@@ -1,0 +1,104 @@
+div#background[data-ui="background"].clickable {
+    background-size: contain;
+}
+choice-container.clickscreen { /* Will apply to all point-and-click element choice containers. */
+	overflow: hidden;
+	max-height:100%;
+	max-width: 100%;
+	margin:0;
+	padding:0;
+	/* Because our images are 1440x900 in size, our ratios are 1.6 and 0.625 */
+	width: calc(100vh * 1.6); /* The viewport height multiplied by your image's width / height in decimal */
+	height: calc(100vw * 0.625); /* The viewport width multiplied by your image's height / width in decimal*/
+}
+
+choice-container.clickscreen.vtfrontpage { /*Specifically applies to the vtfrontpage image and its dimensions. If all of your background images are the same dimensions, you don't need this extra step. Included here needlessly as an example. Deleting this rule won't affect this game.*/
+	width: calc(100vh * 1.6); /*If your images were different sizes, you would specify their dimensions here. */
+	height: calc(100vw * 0.625);
+}
+
+/* Rule applies to all clickscreen buttons to make them invisible and easier to position and move around.*/
+choice-container.clickscreen button {
+    position: absolute;
+	border: none;
+	border-radius: 0;
+	margin:0;
+	padding:0;
+	opacity:0;
+}
+
+/*This rule applies SPECIFICALLY to the bathtub button to position it over the image of the bathtub. We use the .clickscreen and .vtfrontpage rules here to make it so that we can reuse words like "Trees" in the future for other clickable screens without running into conflicts.*/
+choice-container.clickscreen.vtfrontpage button.bathtub{
+	left: 20%;
+	top: 50%;
+	width: 25%;
+	height: 30%;
+}
+/*likewise for the next several*/
+choice-container.clickscreen.vtfrontpage button.machine{
+	left: 77.5%;
+	top: 55%;
+	width: 21%;
+	height: 50%;
+}
+
+choice-container.clickscreen.vtfrontpage button.shower{
+	left: 20%;
+	top: 5%;
+	width:15%;
+	height: 50%;
+}
+choice-container.clickscreen.vtfrontpage button.curtains{
+	left: 1%;
+	top: 0%;
+	width:20%;
+	height: 90%;
+}
+choice-container.clickscreen.vtfrontpage button.mirror{
+	left: 53%;
+	top: 0;
+	width: 15%;
+	height: 35%;
+}
+choice-container.clickscreen.vtfrontpage button.hanger{
+	left: 50%;
+	top: 1%;
+	width:27%;
+	height: 9%;
+}
+choice-container.clickscreen.vtfrontpage button.vtsplash{
+	left: 45%;
+	top: 40%;
+	width: 23%;
+	height: 45%;
+}
+/*And now some buttons for the wrong search page.*/
+choice-container.clickscreen.vtwrongsearch button.searchbox{
+	left: 50%;
+	top: 1%;
+	width:27%;
+	height: 9%;
+}
+choice-container.clickscreen.vtwrongsearch button.wrongperson{
+	left: 2%;
+	top: 15%;
+	width:60%;
+	height: 60%;
+}
+choice-container.clickscreen.vtwrongsearch button.mirror{
+	left: 0;
+	top: 0;
+	width:43%;
+	height: 13%;
+}
+choice-container.clickscreen.vtwrongsearch button.machine{
+	left: 77.5%;
+	top: 1%;
+	width:21%;
+	height: 90%;
+}
+
+
+text-box[data-speaking="a"] {
+	display:none!important;
+}
