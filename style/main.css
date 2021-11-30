@@ -12,6 +12,63 @@ choice-container.clickscreen { /* Will apply to all point-and-click element choi
 	height: calc(100vw * 0.625); /* The viewport width multiplied by your image's height / width in decimal*/
 }
 
+/* living room */
+choice-container.clickscreen.livingroom { 
+	width: calc(100vh * 1.6);
+	height: calc(100vw * 0.625);
+}
+choice-container.clickscreen.livingroom button.sofa{
+	left: 30%;
+	top: 60%;
+	width: 38%;
+	height: 20%;
+}
+choice-container.clickscreen.livingroom button.tv{
+	left: 39%;
+	top: 40%;
+	width: 20%;
+	height: 20%;
+}
+/* choice-container.clickscreen.livingroom button.door{
+	left: 93%;
+	top: 28%;
+	width: 50%;
+	height: 50%;
+} */
+choice-container.clickscreen.livingroom button.drawer{
+	left: 70%;
+	top: 75%;
+	width: 15%;
+	height: 15%;
+}
+/*And now some buttons for the wrong search page.*/
+/* choice-container.clickscreen.vtwrongsearch button.searchbox{
+	left: 50%;
+	top: 1%;
+	width:27%;
+	height: 9%;
+}
+choice-container.clickscreen.vtwrongsearch button.wrongperson{
+	left: 2%;
+	top: 15%;
+	width:60%;
+	height: 60%;
+}
+choice-container.clickscreen.vtwrongsearch button.mirror{
+	left: 0;
+	top: 0;
+	width:43%;
+	height: 13%;
+}
+choice-container.clickscreen.vtwrongsearch button.machine{
+	left: 77.5%;
+	top: 1%;
+	width:21%;
+	height: 90%;
+} */
+
+
+/* bathroom */
 choice-container.clickscreen.vtfrontpage { /*Specifically applies to the vtfrontpage image and its dimensions. If all of your background images are the same dimensions, you don't need this extra step. Included here needlessly as an example. Deleting this rule won't affect this game.*/
 	width: calc(100vh * 1.6); /*If your images were different sizes, you would specify their dimensions here. */
 	height: calc(100vw * 0.625);
@@ -19,7 +76,7 @@ choice-container.clickscreen.vtfrontpage { /*Specifically applies to the vtfront
 
 /* Rule applies to all clickscreen buttons to make them invisible and easier to position and move around.*/
 choice-container.clickscreen button {
-    position: absolute;
+  position: absolute;
 	border: none;
 	border-radius: 0;
 	margin:0;
@@ -98,7 +155,65 @@ choice-container.clickscreen.vtwrongsearch button.machine{
 	height: 90%;
 }
 
+/* map */
+choice-container.clickscreen.ldktv button.livingroom{
+	left: 0;
+	top: 0;
+	width:43%;
+	height: 13%;
+}
+choice-container.clickscreen.ldktv button.bathroom{
+	left: 77.5%;
+	top: 1%;
+	width:21%;
+	height: 90%;
+}
+
+choice-container.clickscreen.backpack button.map {
+	left: 77.5%;
+	top: 1%;
+	width:21%;
+	height: 90%;
+}
 
 text-box[data-speaking="a"] {
 	display:none!important;
+}
+
+img[data-image="tv"], img[data-image="ldktv"] {
+	top: -20%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 60%;
+	max-height: auto;
+}
+
+img[data-image="backpack"] {
+	top: 0;
+	bottom: 70%;
+	left: 85%;
+	right: 0%;
+	margin: auto;
+	max-width: 10%;
+}
+
+.turnRightButton {
+	color: transparent;
+	position: absolute;
+	top: 19%;
+	left: 80%;
+	height: 62%;
+	width: 20%;
+	margin: 0px;
+	overflow: hidden;
+	opacity: 0% !important;
+}
+.turnRightButton:hover {
+	background: url(rightArrow.png);
+	background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+	opacity: 100% !important;
 }

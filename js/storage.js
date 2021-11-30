@@ -10,4 +10,12 @@ monogatari.storage ({
 	clickedSplash: false,
 	clickedWrongPerson: false,
 	searchTerm: "",
+
+	clickedSofa: false,
+	clickedTV: false,
+	clickedDoor: false,
+	inputTerm: "",
+
+	haveKey: false,
+	doorOpen: false,
 });
