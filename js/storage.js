@@ -12,10 +12,20 @@ monogatari.storage ({
 	searchTerm: "",
 
 	clickedSofa: false,
-	clickedTV: false,
-	clickedDoor: false,
+	clickedDrawer: false,
 	inputTerm: "",
 
 	haveKey: false,
 	doorOpen: false,
+	haveKeybed: false,
+	haveHandcuff: false,
+	haveBlindfold: false,
+	haveRope: false,
+	haveDice: false,
+
+	intoBedroom: false,
+
+	clickedDrawerBed: false,
+	clickedPillow: false,
+
 });

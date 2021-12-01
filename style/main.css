@@ -19,9 +19,9 @@ choice-container.clickscreen.livingroom {
 }
 choice-container.clickscreen.livingroom button.sofa{
 	left: 30%;
-	top: 60%;
+	top: 63%;
 	width: 38%;
-	height: 20%;
+	height: 30%;
 }
 choice-container.clickscreen.livingroom button.tv{
 	left: 39%;
@@ -29,17 +29,35 @@ choice-container.clickscreen.livingroom button.tv{
 	width: 20%;
 	height: 20%;
 }
-/* choice-container.clickscreen.livingroom button.door{
-	left: 93%;
+choice-container.clickscreen.livingroom button.photo{
+	left: 25%;
 	top: 28%;
-	width: 50%;
-	height: 50%;
-} */
+	width: 10%;
+	height: 20%;
+}
+choice-container.clickscreen.livingroom button.photoRight{
+	left: 68%;
+	top: 28%;
+	width: 10%;
+	height: 20%;
+}
 choice-container.clickscreen.livingroom button.drawer{
-	left: 70%;
-	top: 75%;
+	left: 75%;
+	top: 78%;
 	width: 15%;
 	height: 15%;
+}
+choice-container.clickscreen.livingroom button.book{
+	left: 39%;
+	top: 28%;
+	width: 20%;
+	height: 10%;
+}
+choice-container.clickscreen.livingroom button.door{
+	top: 28%;
+	left: 90%;
+	height: 52%;
+	width: 100%;
 }
 /*And now some buttons for the wrong search page.*/
 /* choice-container.clickscreen.vtwrongsearch button.searchbox{
@@ -67,13 +85,41 @@ choice-container.clickscreen.vtwrongsearch button.machine{
 	height: 90%;
 } */
 
+/* bedroom */
+choice-container.clickscreen.bedroom { 
+	width: calc(100vh * 1.6);
+	height: calc(100vw * 0.625);
+}
+choice-container.clickscreen.bedroom button.picture{
+	left: 45%;
+	top: 12%;
+	width: 20%;
+	height: 25%;
+}
+choice-container.clickscreen.bedroom button.hanger{
+	left: 80%;
+	top: 40%;
+	width: 30%;
+	height: 50%;
+}
+choice-container.clickscreen.bedroom button.pillow{
+	left: 48%;
+	top: 45%;
+	width: 15%;
+	height: 18%;
+}
+choice-container.clickscreen.bedroom button.drawerBed{
+	left: 16%;
+	top: 60%;
+	width: 12%;
+	height: 18%;
+}
 
 /* bathroom */
-choice-container.clickscreen.vtfrontpage { /*Specifically applies to the vtfrontpage image and its dimensions. If all of your background images are the same dimensions, you don't need this extra step. Included here needlessly as an example. Deleting this rule won't affect this game.*/
+choice-container.clickscreen.vtfront { /*Specifically applies to the vtfrontpage image and its dimensions. If all of your background images are the same dimensions, you don't need this extra step. Included here needlessly as an example. Deleting this rule won't affect this game.*/
 	width: calc(100vh * 1.6); /*If your images were different sizes, you would specify their dimensions here. */
 	height: calc(100vw * 0.625);
 }
-
 /* Rule applies to all clickscreen buttons to make them invisible and easier to position and move around.*/
 choice-container.clickscreen button {
   position: absolute;
@@ -83,47 +129,45 @@ choice-container.clickscreen button {
 	padding:0;
 	opacity:0;
 }
-
 /*This rule applies SPECIFICALLY to the bathtub button to position it over the image of the bathtub. We use the .clickscreen and .vtfrontpage rules here to make it so that we can reuse words like "Trees" in the future for other clickable screens without running into conflicts.*/
-choice-container.clickscreen.vtfrontpage button.bathtub{
+choice-container.clickscreen.vtfront button.bathtub{
 	left: 20%;
 	top: 50%;
 	width: 25%;
 	height: 30%;
 }
 /*likewise for the next several*/
-choice-container.clickscreen.vtfrontpage button.machine{
+choice-container.clickscreen.vtfront button.machine{
 	left: 77.5%;
 	top: 55%;
 	width: 21%;
 	height: 50%;
 }
-
-choice-container.clickscreen.vtfrontpage button.shower{
+choice-container.clickscreen.vtfront button.shower{
 	left: 20%;
 	top: 5%;
 	width:15%;
 	height: 50%;
 }
-choice-container.clickscreen.vtfrontpage button.curtains{
+choice-container.clickscreen.vtfront button.curtains{
 	left: 1%;
 	top: 0%;
 	width:20%;
 	height: 90%;
 }
-choice-container.clickscreen.vtfrontpage button.mirror{
+choice-container.clickscreen.vtfront button.mirror{
 	left: 53%;
 	top: 0;
 	width: 15%;
 	height: 35%;
 }
-choice-container.clickscreen.vtfrontpage button.hanger{
+choice-container.clickscreen.vtfront button.hanger{
 	left: 50%;
 	top: 1%;
 	width:27%;
 	height: 9%;
 }
-choice-container.clickscreen.vtfrontpage button.vtsplash{
+choice-container.clickscreen.vtfront button.vtsplash{
 	left: 45%;
 	top: 40%;
 	width: 23%;
@@ -168,7 +212,6 @@ choice-container.clickscreen.ldktv button.bathroom{
 	width:21%;
 	height: 90%;
 }
-
 choice-container.clickscreen.backpack button.map {
 	left: 77.5%;
 	top: 1%;
@@ -180,7 +223,8 @@ text-box[data-speaking="a"] {
 	display:none!important;
 }
 
-img[data-image="tv"], img[data-image="ldktv"] {
+img[data-image="tv"], img[data-image="ldktv"],
+img[data-image="pw1"] {
 	top: -20%;
 	bottom: 0;
 	left: 0;
@@ -200,15 +244,20 @@ img[data-image="backpack"] {
 }
 
 .turnRightButton {
+	background: url(rightArrow.png);
+	background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 	color: transparent;
 	position: absolute;
-	top: 19%;
-	left: 80%;
+	top: 28%;
+	left: 85%;
 	height: 62%;
-	width: 20%;
+	width: 15%;
 	margin: 0px;
 	overflow: hidden;
-	opacity: 0% !important;
+	opacity: 100% !important;
+	border: none;
 }
 .turnRightButton:hover {
 	background: url(rightArrow.png);
@@ -216,4 +265,56 @@ img[data-image="backpack"] {
   background-size: contain;
   background-position: center;
 	opacity: 100% !important;
+}
+
+
+.turnLeftButton {
+	background: url(leftArrow.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	color: transparent;
+	position: absolute;
+	top: 28%;
+	left: 0%;
+	height: 62%;
+	width: 15%;
+	margin: 0px;
+	overflow: hidden;
+	opacity: 100% !important;
+}
+.turnLeftButton:hover {
+	background: url(leftArrow.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	opacity: 100% !important;
+}
+
+/* .turnRightButton2 {
+	color: transparent;
+	background: url(rightArrow.png);
+	background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+	position: absolute;
+	top: 28%;
+	left: 82%;
+	height: 62%;
+	width: 15%;
+	margin: 0px;
+	overflow: hidden;
+	opacity: 100% !important;
+	border: none;
+}
+.turnRightButton2:hover {
+	background: url(rightArrow.png);
+	background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+	opacity: 100% !important;
+} */
+
+.redText {
+	color: tomato;
 }

@@ -6,12 +6,13 @@ monogatari.configuration ('credits', {
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
 	"room": "room.png",
-	"vtfront": "vtfront.png",
+	"vtfront": "vtfront.png", //bathroom
 	"vtsearchwrong": "vtSearchPageWrong.png",
 	"vtsearchright": "vtSearchPage.png",
 	"driving": "driving.jpg",
 	"darkroom": "darkroom.jpg",
-	"livingroom": "livingroom.png",
+	"livingroom": "livingroom2.png",
+	"bedroom": "bedroom2.png",
 });
 
 // Define the images used in the game.
@@ -29,24 +30,20 @@ monogatari.assets ('music', {
 	'tvnoise': 'tvnoise.mp3',
 	'sg': 'sg.mp3',
 	'laugh': 'laugh.mp3',
+	'lockdoor': 'lockdoor.mp3',
+	'dooropen': 'dooropen.mp3',
+	'doorunlock': 'doorunlock.mp3',
+	'punch': 'punch.mp3',
 });
 
 monogatari.assets ('gallery', {
 	'livingroom': '1128.jpg'
 });
 
-// Monogatari.action ('Notification').notifications ({
-// 	'SampleNotification':{
-// 			title: 'Hey!',
-// 			body: 'This is a notification',
-// 			icon: 'assets/images/notification.png'
-// 	},
-// });
-
 // monogatari.action ('notification').notifications ({
 // 	'livingroom':{
 // 			title: 'Unlock gallery',
-// 			body:'Bạn đã mở khoá thành công livingroom. Save game và mở Gallery để kiểm tra.'
+// 			body:''
 // 	}
 // });
 monogatari.action ('notification').notifications ({
@@ -73,13 +70,13 @@ monogatari.characters ({
 		directory: 'machida', 
 		expressions: {
 			angry: 'expressions/normal.png',
-			happy: 'expressions/happy.jpeg',
+			happy: 'expressions/happy.jpg',
 			normal: 'normal.png',
 			sad: 'sad.png',
 			surprised: 'surprised.png'
 	  }
 	},
-	'a': {
+	'aks': {
 		name: 'Akaso',
 		color: '#5bcaff',
 		directory: 'akaso', 
@@ -103,14 +100,13 @@ monogatari.script ({
 	"show scene driving with fadeIn",
 	
 	'show notification SampleNotification 5000',
-	"nvl Machida đang trên đường về nhà từ phim trường.",
-	// "nvl Tiếng nhạc êm ái trong xe, nhưng anh không còn tâm trí đâu mà thưởng thức.",
-	// "nvl Anh đang suy nghĩ về Akaso, cậu bạn trai bé nhỏ của anh.",
-	// "nvl Dạo gần đây, cậu ấy có vẻ hay giận dỗi anh vô cớ, thỉnh thoảng còn phớt lờ anh.",
-	// "nvl Điển hình là sáng nay, cậu ấy thậm chí còn không hôn anh khi thức dậy.<br/>Lúc anh rời nhà cũng không ôm anh lấy một cái.",
-	// 'nvl Nói ra thì bảo nói vớ nói vẩn, chứ kiểu này là lại đang "ghen" với công việc của anh.<br/>Hôm trước còn nhắn tin cho anh "Anh đi mà kết hôn với công việc luôn đi"...',
-	// "nvl Ừ thì đúng là dạo này công việc của anh có hơi bận rộn, ít có thời gian dành cho cậu.",
-	// "nvl Anh cũng thấy áy náy lắm chứ, nhưng biết sao được.",
+	"nvl Machida đang trên đường trở về nhà từ phim trường.",
+	// "nvl Đã 11h đêm. Lại là một ngày anh phải về muộn.",
+	// "nvl Thể nào cũng bị cậu người yêu nhỏ bé của anh càu nhàu một trận cho coi.",
+	// "nvl Dạo gần đây, Akachan có vẻ hay giận dỗi anh vô cớ, thỉnh thoảng còn phớt lờ anh.",
+	// "nvl Điển hình là sáng nay, cậu thậm chí còn không hôn anh khi thức dậy.<br/>Đến lúc anh rời nhà cũng không ôm anh lấy một cái.",
+  // "nvl Ừ thì đúng là dạo này công việc của anh có hơi bận rộn, ít có thời gian dành cho cậu.",
+	// "nvl Anh cũng thấy khổ tâm lắm chứ, nhưng biết sao được.",
 	// 'nvl Machida thở dài... Thôi thì đợi mấy nữa thư thả, anh sẽ "đền bù" cho cậu sau vậy.',
 	// "nvl Mải suy nghĩ, anh đã về đến căn hộ chung của hai người từ lúc nào không hay.",
 
@@ -118,7 +114,7 @@ monogatari.script ({
 	// "Anh mở cửa bước vào, cả căn phòng bị bao trùm trong bóng tối.",
 	// 'm "Akachan?"',
 	// 'Anh cất tiếng gọi, nhưng không có ai trả lời.',
-	// 'm "Em ấy ra ngoài chăng?"',
+	// 'm "Em ấy ngủ rồi à?"',
 	// "Anh với tay định mở đèn, nhưng trước khi chạm được vào công tắc...",
 	// "show scene room with headShake",
 	// "play music falling",
@@ -127,249 +123,227 @@ monogatari.script ({
 
 	"show scene #000 with fadeIn",
 	"play music break",
-	// "Một tiếng động lớn đã đánh thức Machida.",
+	"Một tiếng động lớn đã đánh thức Machida.",
 	// "Anh mở mắt, loạng choạng đứng dậy.",
 	"show scene livingroom with fadeIn",
-	// 'Anh nhìn quanh và nhận ra đây không phải phòng khách nhà mình.',
+	'Anh nhìn quanh và nhận ra đây không phải phòng khách nhà mình.',
 	// "m Đây là đâu? Sao mình lại ở đây?",
-	// 'Anh với tay tìm điện thoại trong túi quần.<br/>Điện thoại không có sóng.',
+	// 'Anh với tay lục tìm điện thoại trong túi quần, nhưng có vẻ.',
 	// "Còn đang chưa kịp hiểu chuyện gì đang xảy ra, thì bỗng trên một giọng nói vang lên...",
 
 	// "play music laugh",
 	// '"Fufufu. Cuối cùng anh cũng tỉnh lại rồi."',
-	// 'm "Ai đang nói thế? Mau ra mặt đi!"',
-	// // "play music laugh",
-	// '"Fufufu. Thử nhìn vào TV xem."',
-	// 'm "TV?"',
+	// 'm "Akachan??? Em ở đâu vậy???"',
 	// "play music tvnoise",
 	// "show image tv with flipInY",
 	// // "play music sg",
-	// "play music laugh",
-	// '',
-	// 'k "Fufufu. Xin chào, Machida Keita-san. Ta là Cừu vui vẻ đáng yêu dễ thương chăm chỉ tràn ngập năng lượng Hitsuji."',
-	// 'k "Chào mừng đến với "Căn hộ chết chóc"."',
+	// 'Một màn hình trong suốt bỗng nhiên xuất hiện.',
+	// 'aks "kaeri, Machida Keita-san."',
+	// 'aks "Hôm nay anh lại về sớm quá nhỉ?"',
 	// 'm "..."',
-	// 'k "Hẳn là ngươi đang thắc mắc tại sao mình lại ở đây đúng không?"',
-	// 'k "Nói một cách ngắn gọn, ta được lệnh của Akaso-sama bắt giữ cậu về đây..."',
-	// 'm "Khoan đã. Cậu vừa nói cái gì? Akachan??"',
+	// 'aks "Anh hẳn đang hoang mang tại sao mình lại ở đây đúng không?"',
+	// 'aks "Nói ngắn gọn thì, anh đang ở trong một căn nhà cách xa trung tâm thành phố."',
+	// 'aks "Còn lý do hả?"',
+	// 'aks "LÀ VÌ TÔI MUỐN TRỪNG PHẠT ANH"',
 	// "show image tv with headShake",
-	// 'k "Ai cho ngươi gọi chủ nhân của ta như thế hả?"',
-	// 'k "Nói tóm lại, cậu chủ rất tức giận về thái độ của ngươi dạo gần đây, và nghĩ phải chăng ngươi đã hết thương cậu ấy rồi..."',
-	// 'm "Làm gì có chuyện đó!!!"',
-	// 'k "Cái đó ta không cần biết. Muốn chứng minh điều đó, ngươi phải chiến thắng trò chơi này."',
+	// 'aks "Dạo này anh toàn đi sớm về muộn, không quan tâm gì đến tôi."',
+	// 'aks "Đã vậy thì anh cưới công việc của anh luôn đi, đừng quan tâm đến tôi nữa!!!"',
+	// 'm "Akachan, anh thực sự xin lỗi..."',
+	// 'm "Mau lại đây đi, mình từ từ nói chuyện."',
+	// 'm "Em biết anh yêu em nhiều thế nào mà..."',
+	// 'aks "Tôi không tin!!! Muốn chứng minh điều đó thì anh phải chiến thắng trò chơi này."',
 	// 'm "..."',
-	// 'm "Được rồi, giờ thì im lặng để ta phổ biến luật chơi."',
+	// 'aks "Anh có đồng ý tham gia không?"',
+	// 'm "..."',
+	// 'm "Được... Chỉ cần em muốn, anh có thể làm bất cứ điều gì!"',
+	// 'aks "Tốt lắm. Vậy thì nghe dây!"',
 	// "hide image tv with flipOutY",
 
 	// "show image ldktv with flipInY",
-	// 'k "Căn hộ này mô phỏng căn hộ đầu tiên mà hai người sống chung.',
-	// 'k "Luật chơi rất đơn giản. Ngươi sẽ phải tìm kiếm và giải mã bí ẩn trong các căn phòng.',
+	// 'aks "Căn hộ này mô phỏng căn hộ đầu tiên mà chúng ta chung sống.',
+	// 'aks "Luật chơi rất đơn giản. Anh sẽ phải tìm kiếm và giải mã bí ẩn trong từng căn phòng.',
 	// "hide image ldktv with flipOutY",
 	// "show image tv with flipInY",
-	// 'k "Giải được hết bí ẩn và tìm ra mật mã cửa, ngươi sẽ thoát khỏi đây một cách an toàn."',
-	// 'k "Còn nếu thua cuộc thì... "',
+	// 'aks "Giải được hết bí ẩn và tìm ra mật mã cuối cùng, tôi sẽ suy nghĩ về việc tha thứ cho anh."',
+	// 'aks "Còn nếu thua cuộc thì... "',
 	// "play music laugh",
-	// 'k "Fufufu... Ta cũng không biết điều gì sẽ đến với người đâu."',
-	// 'k "Cậu chủ đã chuẩn bị cho người một hình phạt vô cùng thú vị đó... Fufufu."',
-	// 'k "Ta có một gợi ý cho ngươi."',
-	// 'k "Bí ẩn trong mỗi căn phòng liên quan đến một người vô cùng quan trọng với ngươi."',
-	// 'k "Giờ thì... Fufufu... Game, start~~~"',
+	// 'aks "Thì anh cứ liệu hồn đó!"',
+	// 'aks "Nhiệm vụ đầu tiên của anh: mở cánh cửa dẫn sang phòng bên cạnh."',
+	// 'aks "Giờ thì... Game, start~~~"',
 	// "hide image tv with flipOutY",
 	// 'm "Khoan đã..."',
-	// 'Machida chưa kịp nói hết câu thì màn hình đã vụt tắt mất rồi.',
-	// 'Anh vội vàng tiến đến đập đập chiếc tv, nhưng vô ích.',
-
-	// 'Bất lực, anh bắt đầu quá trình tìm kiếm bí ẩn trong căn nhà.',
-	"Tấm bản đồ được để sẵn trên kệ để tv.",
+	// 'Machida chưa kịp nói hết câu thì màn hình đã vụt tắt, Akaso biến mất.',
+	// 'Machida thở dài... Hoá ra Akachan của anh "ghen" với công việc của anh đến mức này cỡ à.',
+	// 'Anh bất giác mỉm cười.',
+	// 'Thật đáng yêu, Akachan của anh làm gì cũng đáng yêu hết...',
+	// 'aks "Anh còn đứng đờ người ra đó làm gì!!!"',
+	// 'Âm thanh lớn phát ra từ chiếc loa lôi anh về thực tại',
+	// 'm "À... Anh..."',
+	// 'aks "Còn ờ à gì nữa! Nhanh bắt đầu đi. Tôi lúc nào cũng theo dõi anh đó!"',
+	// 'Không còn cách nào khác, anh bắt đầu quá trình tìm kiếm bí ẩn trong căn nhà.',
+	// "Tấm bản đồ được để sẵn trên kệ để tv.",
 	// "show image map",
 	// 'Căn phòng anh đang ở hiện tại là phòng khách. Theo bản đồ thì kế bên là phòng ăn và phòng ngủ.',
-	// 'm Được rồi. Tạm cất nó đi đã.',
 	// "hide image map",
-	// 'm Để xem nào...',
+	// 'Quả thực là rất giống căn hộ đầu tiên hai người ở chung.',
+	// 'Anh mỉm cười, bao nhiêu kỷ niệm ùa về.',
+	// 'm Nào thì tìm. Xem em bày trò gì với tôi nào, Akachan.',
+	// 'Anh bắt đầu đi xung quanh căn phòng này để tìm manh mối.',
 	
-	"show scene livingroom with clickable",
 	'jump choiceLoop1',
 	// "jump map",
 ],
 
-"openMap": [
-	{'Choice':
-	{
-		"Class": "clickscreen map",
-		"Dialog": "Mở bản đồ",
-		"Do": "jump map",
-	}
-	}
-],
+	// "openMap": [
+	// 	{'Choice':
+	// 	{
+	// 		"Class": "clickscreen map",
+	// 		"Dialog": "Mở bản đồ",
+	// 		"Do": "jump map",
+	// 	}
+	// 	}
+	// ],
 
-// 'map': [
-// 	'show image ldktv with clickable',
-// 	{'Choice':
-// 	{
-// 		"livingroom": {
-// 			"Text": "livingroom",
-// 			"Class": "clickscreen livingroom",
-// 			"Do": 'jump choiceLoop1',
-// 		},
-// 		"bathroom": {
-// 			"Text": "bathroom",
-// 			"Class": "clickscreen bathroom",
-// 			"Do": 'jump choiceLoop1',
-// 		},
-//   },
-// 	}
-// ],
+	// 'map': [
+	// 	'show image ldktv with clickable',
+	// 	{'Choice':
+	// 	{
+	// 		"livingroom": {
+	// 			"Text": "livingroom",
+	// 			"Class": "clickscreen livingroom",
+	// 			"Do": 'jump choiceLoop1',
+	// 		},
+	// 		"bathroom": {
+	// 			"Text": "bathroom",
+	// 			"Class": "clickscreen bathroom",
+	// 			"Do": 'jump choiceLoop1',
+	// 		},
+	//   },
+	// 	}
+	// ],
 
-"choiceLoop1":[
-	// "show image backpack with clickable",
-	// 'jump openMap',
-	{'Choice':
-	{
-		"Class": "clickscreen livingroom",
-		"Dialog": "Tìm kiếm bí ẩn trong phòng khách!",
+	// living room
+	"choiceLoop1":[
+		"show scene livingroom with clickable",
+		{'Conditional':{
+			'Condition': function(){
+				return this.storage().haveKey;
+			},
+			'False': "next",
+			'True': "<i>Đã mở khoá. Click vào mũi tên để sang phòng bên cạnh.",
+		}},
+		{'Choice':
+		{
+			"Class": "clickscreen livingroom",
 
-		"sofa": {
-			"Text": "sofa",
-			"Class": "sofa",
-			"Do": 'm Thật giống với chiếc sofa to đùng ở nhà cũ của Akaso. Nhưng mình không nghĩ nó có gì bí ẩn.',
-			"Condition": function(){
-				return !monogatari.storage().clickedSofa;
+			"photo": {
+				"Text": "photo",
+				"Class": "photo",
+				"Do": 'jump photo',
+				'Condition': function(){return !this.storage().haveKey},
 			},
-			"onChosen": function(){
-				monogatari.storage().clickedSofa = true;
+			"photoRight": {
+				"Text": "photoRight",
+				"Class": "photoRight",
+				"Do": 'm Chỉ là một bức tranh bình thường.',
+				'Condition': function(){return !this.storage().haveKey},
 			},
-			"onRevert": function(){
-				monogatari.storage().clickedSofa = false;
+			"book": {
+				"Text": "book",
+				"Class": "book",
+				"Do": 'm Mình không tìm được gì ở đây cả.',
+				'Condition': function(){return !this.storage().haveKey},
 			},
-		},
-		"tv": {
-			"Text": "tv",
-			"Class": "tv",
-			"Do": "jump tv",
-		},
-		"door": {
-			"Text": "door",
-			"Class": "door turnRightButton",
-			"Do": 'jump Door',
-		},
-		"drawer": {
-			"Text": "drawer",
-			"Class": "drawer",
-			"Do": 'jump Drawer',
-		},
-	}
-	},
-
-	// "m:happy Mình phải",
-	"jump choiceLoop1",
-],
-
-// bathroom
-"choiceLoop":[
-	{'Choice':
-	{
-		"Class": "clickscreen vtfrontpage",
-		"Dialog": "",
-
-		"shower": {
-			"Text": "shower",
-			"Class": "shower",
-			"Do": "jump searchBox",
-		},
-		"curtains": {
-			"Text": "curtains",
-			"Class": "curtains",
-			"Do": "m Chỉ là tấm rèm thôi mà.",
-			"Condition": function(){
-				return !monogatari.storage().clickedCurtains;
+			"sofa": {
+				"Text": "sofa",
+				"Class": "sofa",
+				"Do": 'jump sofa',
+				'Condition': function(){return !this.storage().haveKey},
 			},
-			"onChosen": function(){
-				monogatari.storage().clickedCurtains = true;
+			"tv": {
+				"Text": "tv",
+				"Class": "tv",
+				"Do": "jump tv",
+				'Condition': function(){return !this.storage().haveKey},
 			},
-			"onRevert": function(){
-				monogatari.storage().clickedCurtains = false;
+			"doorClose": {
+				"Text": "doorClose",
+				"Class": "door",
+				'Condition': function(){return !this.storage().haveKey},
+				"Do": 'jump doorClose',
 			},
-		},
-		"bathtub": {
-			"Text": "bathtub",
-			"Class": "bathtub",
-			"Do": "m 123",
-			"Condition": function(){
-				return !monogatari.storage().clickedBathtub;
+			"doorOpen": {
+				"Text": "doorOpen",
+				"Class": "turnRightButton",
+				"Do": 'jump doorOpen',
+				'Condition': function(){return this.storage().haveKey},
 			},
-			"onChosen": function(){
-				monogatari.storage().clickedBathtub = true;
+			"drawer": {
+				"Text": "drawer",
+				"Class": "drawer",
+				"Do": 'jump Drawer',
+				"Condition": function(){
+					return !monogatari.storage().clickedDrawer;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedDrawer = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedDrawer = false;
+				},
 			},
-			"onRevert": function(){
-				monogatari.storage().clickedBathtub = false;
-			},
-		},
-		"hanger": {
-			"Text": "hanger",
-			"Class": "hanger",
-			"Do": "Phải rồi, mình còn quên đặt mua cái giá treo mới gãy nữa. Nhưng có lẽ đó cũng không phải vấn đề.",
-			"Condition": function(){
-				return !monogatari.storage().clickedHanger;
-			},
-			"onChosen": function(){
-				monogatari.storage().clickedHanger = true;
-			},
-			"onRevert": function(){
-				monogatari.storage().clickedHanger = false;
-			},
-		},
-		"mirror": {
-			"Text": "mirror",
-			"Class": "mirror",
-			"Do": "m Đúng là đôi lúc mình có làm em ấy xấu hổ khi nhìn vào gương nhưng... Mình không nghĩ đó là vấn đề.",
-			"Condition": function(){
-				return !monogatari.storage().clickedMirror;
-			},
-			"onChosen": function(){
-				monogatari.storage().clickedMirror = true;
-			},
-			"onRevert": function(){
-				monogatari.storage().clickedMirror = false;
-			},
-		},
-		"splash": {
-			"Text": "splash",
-			"Class": "vtsplash",
-			"Do": "jump splash",
-		},
-		"machine": {
-			"Text": "machine",
-			"Class": "machine",
-			"Do": "m Mình không nghĩ vấn đề là ở máy giặt.",
-			"Condition": function(){
-				return !monogatari.storage().clickedMachine;
-			},
-			"onChosen": function(){
-				monogatari.storage().clickedMachine = true;
-			},
-			"onRevert": function(){
-				monogatari.storage().clickedMachine = false;
-			},
-		},
-	}
-	},
-
-	"jump choiceLoop",
-	],
-
-
-	//label livingroom
-	"tv" : [
-		"m TV... À phải rồi, lần đó... Khi tụi mình mới dọn về ở chung.",
-		"m Có lần Akaso đã mời một tiền bối về xem trước bản bluray Cherry Maho.",
-		"m Quả thực là hôm đó mình đã không kiềm chế được cơn ghen.",
-		"m Và cũng có chút nổi nóng với em ấy...",
-		"m Nhưng mình không nghĩ em ấy vẫn giận chuyện đó.",
+		}},
 		"jump choiceLoop1",
 	],
-	"Door": [
+
+	//label livingroom
+	"photo": [
+		"Có thứ gì đó đằng sau bức tranh.",
+		"show image pw1 with fadeIn",
+		'm Có vẻ như đây là manh mối gì đó.',
+		"hide image pw1 with fadeOut",
+		"jump choiceLoop1",
+	],
+	"sofa" : [
+		"m Chiếc sofa này...",
+		"m Rất giống với chiếc sofa cũ to đùng ở nhà Akaso.",
+		"m Tụi mình đã từng tranh cãi về việc vất nó đi hay để lại.",
+		"m Cuối cùng vẫn là giữ lại theo ý em ấy. Haiz... Em thích là được.",
+		"m Nhưng mà... Trông nó không có gì khả nghi cả.",
+		"m Có lẽ mình nên tìm manh mối chỗ khác.",
+		"jump choiceLoop1",
+	],
+	"tv" : [
+		"m TV... À phải rồi, lần đó... Khi tụi mình mới dọn về ở chung.",
+		"m Akaso đã mời một tiền bối về cùng xem trước bản bluray Cherry Maho.",
+		"m Quả thực hôm đó mình đã không kiềm chế được cơn ghen.",
+		"m Và có chút nổi nóng với em ấy...",
+		"m Giờ nghĩ lại... Sao hồi đó mình nhỏ nhen thế nhỉ!",
+		"m Nhưng mình không nghĩ em ấy còn để bụng chuyện đó.",
+		"m Có lẽ mình nên tìm manh mối chỗ khác.",
+		"jump choiceLoop1",
+	],
+	"Drawer": [
+		"m:happy Hehehe...",
+		"Machida đã tìm thấy một thứ thú vị trong tủ kéo.",
+		'<i><span class="redText">Đã nhận được vật phẩm bí mật!',
+		{'Function':{
+			'Apply': function(){
+				this.storage().haveRope = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().haveRope = false;
+			}
+		}},
+		"jump choiceLoop1",
+	],
+	"doorClose": [
+		"play music lockdoor",
+		"m Có mật khẩu à?",
+		"m Thử nhập bừa xem sao.",
 		{'Input': {
-			'Text': 'Nhập mật khẩu:',
+			'Text': 'Nhập mật khẩu (8 ký tự):',
 			'Validation': function(input) {
 				return input.trim().length > 0;
 			},
@@ -378,38 +352,321 @@ monogatari.script ({
 			},
 			'Warning': 'Vui lòng nhập mật khẩu để mở khoá!',
 		}},
-		{'Conditional':{
-		'Condition': function() {
-			return monogatari.storage().inputTerm == "24032021"
-		},
-		'True': "jump correct",
-		'False': "jump wrong",
+		{'Conditional': {
+			'Condition': function() {
+				return monogatari.storage().inputTerm == "09012021"
+		  },
+			'True': "jump correct",
+			'False': "jump wrong",
 		}},
 		"jump choiceLoop1",
 	],
-
-	"Drawer": [
-		"Machida tìm thấy trong ngăn kéo một chiếc đĩa CD có vẻ cũ kỹ.",
-		"m Một chiếc đĩa CD? Thử mở nó lên xem nào.",
-		'play music tvnoise',
-		"show image pw1 with flipInY",
-		'Đây rồi! Có lẽ đây chính là mật khẩu cánh cửa?',
-		"hide image pw1 with flipOutY",
-		"jump choiceLoop1",
+	"doorOpen": [
+		"play music dooropen",
+		"jump bedroom",
 	],
 	"correct": [
+		"play music doorunlock",
+		"m Thành công rồi!",
 		"gallery unlock livingroom",
-		"m Có lẽ mình nên di chuyển sang phòng tiếp theo.",
-		"show scene vtfront with clickable",
-		"jump choiceLoop",
+		'<i><span class="redText">Đã unlock 1 bức ảnh trong Gallery.',
+		'<i>Bạn có thể Save tiến trình, Quit game và check ảnh tại Gallery.',
+		{'Function':{
+			'Apply': function(){
+				this.storage().haveKey = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().haveKey = false;
+			}
+		}},
+		"jump choiceLoop1",
 	],
 	"wrong": [
 		"Mật khẩu sai!",
-		"Có lẽ gợi ý mật khẩu nằm đâu đó trong phòng khách.",
+		"m Không được rồi! Chắc là sẽ có manh mối gì đó đâu đây.",
 		'jump choiceLoop1',
 	],
 
+	"bedroom": [
+		{'Conditional':{
+			'Condition': function(){
+				return this.storage().intoBedroom;
+			  },
+			'False': "next",
+			'True': "jump choiceLoop2",
+	  }},
+		"show scene bedroom with fadeIn",
+		"play music tvnoise",
+		"show image tv with flipInY",
+		'Màn hình trong suốt một lần nữa xuất hiện.',
+		'aks "Nhiệm vụ ở phòng này rất đơn giản."',
+		'aks "Trong căn phòng này có một điểm bất thường."',
+		'aks "Anh chỉ cần tìm điểm bất thường đó, và hoàn thành nhiệm vụ được giao."',
+		'aks "Chúc may mắn... Ahahaha..."',
+		"hide image tv with flipOutY",
+		"jump choiceLoop2",
+	],
 
+	// bed room
+	"choiceLoop2":[
+		"show scene bedroom with clickable",
+		{'Function':{
+			'Apply': function(){
+				this.storage().intoBedroom = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().intoBedroom = false;
+			}
+		}},
+		{'Conditional':{
+			'Condition': function(){
+				return this.storage().haveKeybed;
+			  },
+			'False': "next",
+			'True': "<i>Đã mở khoá. Click vào mũi tên để sang phòng bên cạnh.",
+	  }},
+		
+		{'Choice':
+		{
+			"Class": "clickscreen bedroom",
+			// "Dialog": '<i>Hoàn thành nhiệm vụ trong phòng ngủ.',
+			'turnLeft': {
+				'Text': 'back to living room',
+				'Do': 'jump choiceLoop1',
+				'Class': 'turnLeftButton',
+			},
+			"picture": {
+				"Text": "picture",
+				"Class": "picture",
+				"Do": 'm Chỉ là một bức tranh bình thường.',
+				'Condition': function(){return !this.storage().haveKeybed},
+			},
+			// "picture": {
+			// 	"Text": "picture",
+			// 	"Class": "picture",
+			// 	"Do": 'm Chỉ là một bức tranh bình thường.',
+			// 	'Condition': function(){return !this.storage().haveKeybed},
+			// },
+
+			"drawerBed": {
+				"Text": "drawerBed",
+				"Class": "drawerBed",
+				"Do": 'jump drawerBed',
+				"Condition": function(){
+					return !monogatari.storage().clickedDrawerBed;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedDrawerBed = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedDrawerBed = false;
+				},
+			},
+			"pillow": {
+				"Text": "pillow",
+				"Class": "pillow",
+				"Do": "jump pillow",
+				"Condition": function(){
+					return !monogatari.storage().clickedPillow;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedPillow = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedPillow = false;
+				},
+			},
+			"hangerClose": {
+				"Text": "hangerClose",
+				"Class": "hanger",
+				'Condition': function(){return !this.storage().haveKeybed},
+				"Do": 'jump hangerClose',
+			},
+			"hangerOpen": {
+				"Text": "hangerOpen",
+				"Class": "turnRightButton",
+				"Do": 'jump hangerOpen',
+				'Condition': function(){return this.storage().haveKeybed},
+			},
+		}
+		},
+		"jump choiceLoop2",
+	],
+
+	// label bedroom
+	"drawerBed": [
+		"m:happy Bắt được em rồi, Akachan. Hehehe...",
+		'<i><span class="redText">Đã nhận được vật phẩm bí mật!',
+		{'Function':{
+			'Apply': function(){
+				this.storage().haveHandcuff = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().haveHandcuff = false;
+			}
+		}},
+		"jump choiceLoop2",
+	],
+	"pillow": [
+		"Machida tìm thấy thứ gì đó dưới gối.",
+		"m:happy Hehehe... Em muốn cả thứ này ở đây nữa à.",
+		'<i><span class="redText">Đã nhận được vật phẩm bí mật!',
+		{'Function':{
+			'Apply': function(){
+				this.storage().haveBlindfold = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().haveBlindfold = false;
+			}
+		}},
+		"jump choiceLoop2",
+	],
+	"hangerClose": [
+		'aks "Cuối cùng thì anh cũng tìm ra."',
+		'aks "Giờ thì anh biết phải làm gì rồi đó!"',
+		{'Choice': {
+			'Outside': {
+					'Text': 'Phơi đồ bên ngoài',
+					'Do': 'jump wrongHanger'
+			},
+			'Inside': {
+					'Text': 'Phơi đồ trong phòng',
+					'Do': 'jump correctHanger'
+			},
+	  }},
+		"jump choiceLoop2",
+	],
+	"hangerOpen": [
+		"play music dooropen",
+		"jump choiceLoop",
+	],
+	"correctHanger": [
+	  'aks "Phải thế chứ ehehe... Giỏi lắm chồ..."',
+		'aks "À không có gì, anh tiếp tục đi!"',
+		'm:happy ...',
+		"m:happy Em ấy vừa định gọi mình là chồng đúng không? Hehe!",
+		"gallery unlock bedroom",
+		'<i><span class="redText">Đã unlock 1 bức ảnh trong Gallery.',
+		'<i>Bạn có thể Save tiến trình, Quit game và check ảnh tại Gallery.',
+		{'Function':{
+			'Apply': function(){
+				this.storage().haveKeybed = true;
+				return true;
+			},
+			'Reverse': function(){
+				this.storage().haveKeybed = false;
+			}
+		}},
+		"jump choiceLoop2",
+	],
+	"wrongHanger": [
+		"m Cho dù có phải ngủ sofa!!!",
+		"show scene bedroom with clickable headShake",
+    "play music punch",
+		"Một chiếc dép từ đâu phi thẳng vào người Machida.",
+		'm "Ui da!"',
+		'aks "Anh giỏi lắm!"',
+		'aks "Giờ phút này mà anh vẫn còn cố làm trái ý tôi hả???"',
+		'aks "Còn không chọn lại?"',
+		'jump choiceLoop2',
+	],
+
+	// bathroom
+	"choiceLoop":[
+		"show scene vtfront with clickable",
+		{'Choice':
+		{
+			"Class": "clickscreen vtfront",
+
+			"shower": {
+				"Text": "shower",
+				"Class": "shower",
+				"Do": "jump searchBox",
+			},
+			"curtains": {
+				"Text": "curtains",
+				"Class": "curtains",
+				"Do": "m Chỉ là tấm rèm thôi mà.",
+				"Condition": function(){
+					return !monogatari.storage().clickedCurtains;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedCurtains = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedCurtains = false;
+				},
+			},
+			"bathtub": {
+				"Text": "bathtub",
+				"Class": "bathtub",
+				"Do": "m 123",
+				"Condition": function(){
+					return !monogatari.storage().clickedBathtub;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedBathtub = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedBathtub = false;
+				},
+			},
+			"hanger": {
+				"Text": "hanger",
+				"Class": "hanger",
+				"Do": "Phải rồi, mình còn quên đặt mua cái giá treo mới gãy nữa. Nhưng có lẽ đó cũng không phải vấn đề.",
+				"Condition": function(){
+					return !monogatari.storage().clickedHanger;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedHanger = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedHanger = false;
+				},
+			},
+			"mirror": {
+				"Text": "mirror",
+				"Class": "mirror",
+				"Do": "m Đúng là đôi lúc mình có làm em ấy xấu hổ khi nhìn vào gương nhưng... Mình không nghĩ đó là vấn đề.",
+				"Condition": function(){
+					return !monogatari.storage().clickedMirror;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedMirror = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedMirror = false;
+				},
+			},
+			"splash": {
+				"Text": "splash",
+				"Class": "vtsplash",
+				"Do": "jump splash",
+			},
+			"machine": {
+				"Text": "machine",
+				"Class": "machine",
+				"Do": "m Mình không nghĩ vấn đề là ở máy giặt.",
+				"Condition": function(){
+					return !monogatari.storage().clickedMachine;
+				},
+				"onChosen": function(){
+					monogatari.storage().clickedMachine = true;
+				},
+				"onRevert": function(){
+					monogatari.storage().clickedMachine = false;
+				},
+			},
+		}
+		},
+
+	"jump choiceLoop",
+	],
 
 	// label bathroom
 	"splash": [
