@@ -352,7 +352,7 @@ monogatari.script ({
 		"Có thứ gì đó đằng sau bức tranh.",
 		"show image pw0 with fadeIn",
 		'm Có vẻ như đây là manh mối gì đó.',
-		'm Mật khẩu gì đó chăng?',
+		'm Mật khẩu cánh cửa đằng kia chăng?',
 		'm Mà thôi, cứ để tạm ở đây, mình có thể xem lại sau.',
 		"hide image pw0 with fadeOut",
 		"jump choiceLoop1",
