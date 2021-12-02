@@ -444,9 +444,6 @@ monogatari.script ({
 		'jump choiceLoop1',
 	],
 
-
-
-
 	// bed room
 	"bedroom": [
 		{'Conditional':{
@@ -885,10 +882,24 @@ monogatari.script ({
 			"door": {
 				"Text": "door",
 				"Class": "door",
-				"Do": "jump input2",
+				"Do": "jump confirm",
 			},
 		},
     },
+	],
+
+	"confirm":[
+		{'Choice': {
+			"Dialog": "Bạn sẽ không thể quay lại màn trước. Bạn chắc chắn muốn đi tiếp?",
+			'Yes': {
+					'Text': 'Đi tiếp',
+					'Do': 'jump input2'
+			},
+			'No': {
+					'Text': 'Quay lại',
+					'Do': 'jump lastDoor'
+			},
+	  }}
 	],
 
 	"input2": [
@@ -1148,12 +1159,12 @@ monogatari.script ({
 		"show image tv with flipInY",
 		"stop music punchs",
 		"play music tvnoise",
-		'aks "Thế mà anh bảo yêu tôi???"',
-		'aks "Có thế mà anh cũng không đoán đúng được!"',
-		'aks "Tôi đi đây! Anh cứ ở đó mà chịu phạt đi!"',
+		'aks "Giỏi lắm, Machida-san!"',
+		'aks "Có thế mà anh cũng không đoán được???"',
+		'aks "Vậy thôi, tôi đi đây! Anh cứ ở đó mà sám hối đi nhé!"',
 		"hide image tv with flipInY",
 		"m Chờ... Chờ đã... Akachan!!! ĐỪNG BỎ ANH!!!",
-		"Machida dần chìm trong biển dép.",
+		"Machida dần chìm trong biển dép...",
 		"stop music punchs",
 		"show scene #000",
 		"...",
