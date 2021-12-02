@@ -829,7 +829,7 @@ monogatari.script ({
 		}},
 		{'Conditional':{
 		'Condition': function() {
-			return monogatari.storage().searchTerm == "Noel" || monogatari.storage().searchTerm == "Christmas"
+			return monogatari.storage().searchTerm == "Noel"
 		},
 		'True': "jump correctName",
 		'False': "jump wrongName",
