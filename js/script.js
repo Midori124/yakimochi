@@ -35,6 +35,7 @@ monogatari.assets ('scenes', {
 	'laugh': 'laugh.png',
 	"smile": "smile.png",
 	'sad': 'sad.png',
+	'aks': 'aks.png',
 });
 
 // Define the images used in the game.
@@ -582,7 +583,7 @@ monogatari.script ({
 	"pillow": [
 		"m Hình như có thứ gì đó dưới gối...",
 		"m:happy Hehehe...",
-		'<i>Tìm thấy vật phẩm mới: <span class="redText">Blindfold.',
+		'<i>Tìm thấy vật phẩm mới: <span class="redText">Lube.',
 		{'Function':{
 			'Apply': function(){
 				this.storage().haveBlindfold = true;
@@ -1051,8 +1052,9 @@ monogatari.script ({
 		"Không chịu bỏ cuộc, cậu cắn thật mạnh vào tai anh.",
 		"show scene noBall with fadeIn",
 		"Machida đau đớn, buông Akaso xuống và ôm lấy tai.",
+		"show scene #000 with fadeIn",
 		"Akaso cố sức bò về phía bàn làm việc và bấm một cái nút trên bàn.",
-		"play music bodythud",
+		"play music falling",
 		"Sàn nhà nơi Machida đang nằm bỗng mở ra một mật địa bên dưới, và anh rơi xuống...",
 		"jump Ending2",
 	],
@@ -1063,7 +1065,7 @@ monogatari.script ({
 		"Akaso vùng vẫy, nhưng vô ích.",
 		'Cậu đành để mặc cho Machida vác vác cậu lên vai, hướng về phía nhà tắm phòng 703.',
 		"show scene shower with fadeIn",
-		'Anh xả vòi sen và bắt đầu "hành sự"',
+		'Anh xả vòi sen và bắt đầu "công chuyện".',
 		"show scene last with fadeIn",
 		'm "Cưng à, anh tới đây..."',
 		{'Conditional':{
@@ -1076,8 +1078,8 @@ monogatari.script ({
 	],
 
 	"Ending3": [
-		'm "Cuối cùng... Là thứ này..."',
-		'Anh lôi <span class="redText">chiếc bịt mắt tìm được dưới gối phòng ngủ ban nãy.</span>',
+		'Anh lôi ra từ trong túi <span class="redText">lọ dầu bôi trơn tìm được trong phòng ngủ ban nãy.</span>',
+		"show scene aks with fadeIn",
 		'm Để xem ai là người trừng phạt ai.',
 		"show scene machida with fadeIn",
 		'',
