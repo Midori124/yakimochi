@@ -409,7 +409,7 @@ monogatari.script ({
 		}},
 		{'Conditional': {
 			'Condition': function() {
-				return monogatari.storage().inputTerm == "09012021"
+				return monogatari.storage().inputTerm == "02042021"
 		  },
 			'True': "jump correct",
 			'False': "jump wrong",
@@ -829,7 +829,7 @@ monogatari.script ({
 		}},
 		{'Conditional':{
 		'Condition': function() {
-			return monogatari.storage().searchTerm == "Noel"
+			return monogatari.storage().searchTerm == "Noel" || monogatari.storage().searchTerm == "Christmas"
 		},
 		'True': "jump correctName",
 		'False': "jump wrongName",
