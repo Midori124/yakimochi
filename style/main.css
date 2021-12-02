@@ -298,3 +298,10 @@ img[data-image="backpack"] {
 .ending {
 	font-size: larger;
 }
+
+.img{
+	width: 100%;
+	max-width: 700px;
+	height: auto;
+	border: 2px solid black;
+}

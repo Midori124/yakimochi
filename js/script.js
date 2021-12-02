@@ -3,6 +3,12 @@ monogatari.configuration ('credits', {
 
 });
 
+monogatari.component ('main-screen').template (() => {
+	return `
+			<h1>Ghen</h1>
+	`;
+});
+
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
 	"room": "room.png",
