@@ -59,31 +59,6 @@ choice-container.clickscreen.livingroom button.door{
 	height: 52%;
 	width: 100%;
 }
-/*And now some buttons for the wrong search page.*/
-/* choice-container.clickscreen.vtwrongsearch button.searchbox{
-	left: 50%;
-	top: 1%;
-	width:27%;
-	height: 9%;
-}
-choice-container.clickscreen.vtwrongsearch button.wrongperson{
-	left: 2%;
-	top: 15%;
-	width:60%;
-	height: 60%;
-}
-choice-container.clickscreen.vtwrongsearch button.mirror{
-	left: 0;
-	top: 0;
-	width:43%;
-	height: 13%;
-}
-choice-container.clickscreen.vtwrongsearch button.machine{
-	left: 77.5%;
-	top: 1%;
-	width:21%;
-	height: 90%;
-} */
 
 /* bedroom */
 choice-container.clickscreen.bedroom { 
@@ -106,12 +81,18 @@ choice-container.clickscreen.bedroom button.pillow{
 	left: 48%;
 	top: 45%;
 	width: 15%;
-	height: 18%;
+	height: 14%;
 }
 choice-container.clickscreen.bedroom button.drawerBed{
 	left: 16%;
 	top: 60%;
 	width: 12%;
+	height: 18%;
+}
+choice-container.clickscreen.bedroom button.bed{
+	left: 32%;
+	top: 60%;
+	width: 45%;
 	height: 18%;
 }
 
@@ -132,8 +113,8 @@ choice-container.clickscreen button {
 /*This rule applies SPECIFICALLY to the bathtub button to position it over the image of the bathtub. We use the .clickscreen and .vtfrontpage rules here to make it so that we can reuse words like "Trees" in the future for other clickable screens without running into conflicts.*/
 choice-container.clickscreen.vtfront button.bathtub{
 	left: 20%;
-	top: 50%;
-	width: 25%;
+	top: 56%;
+	width: 23%;
 	height: 30%;
 }
 /*likewise for the next several*/
@@ -141,7 +122,7 @@ choice-container.clickscreen.vtfront button.machine{
 	left: 77.5%;
 	top: 55%;
 	width: 21%;
-	height: 50%;
+	height: 30%;
 }
 choice-container.clickscreen.vtfront button.shower{
 	left: 20%;
@@ -149,54 +130,49 @@ choice-container.clickscreen.vtfront button.shower{
 	width:15%;
 	height: 50%;
 }
-choice-container.clickscreen.vtfront button.curtains{
+/* choice-container.clickscreen.vtfront button.curtains{
 	left: 1%;
 	top: 0%;
 	width:20%;
 	height: 90%;
-}
+} */
 choice-container.clickscreen.vtfront button.mirror{
 	left: 53%;
 	top: 0;
 	width: 15%;
 	height: 35%;
 }
+choice-container.clickscreen.vtfront button.drawerBathroom{
+	left: 73%;
+	top: 0;
+	width: 15%;
+	height: 35%;
+}
 choice-container.clickscreen.vtfront button.hanger{
-	left: 50%;
+	left: 36%;
 	top: 1%;
-	width:27%;
-	height: 9%;
+	width: 10%;
+	height: 40%;
 }
 choice-container.clickscreen.vtfront button.vtsplash{
 	left: 45%;
 	top: 40%;
 	width: 23%;
-	height: 45%;
+	height: 25%;
 }
-/*And now some buttons for the wrong search page.*/
-choice-container.clickscreen.vtwrongsearch button.searchbox{
-	left: 50%;
-	top: 1%;
-	width:27%;
-	height: 9%;
-}
-choice-container.clickscreen.vtwrongsearch button.wrongperson{
-	left: 2%;
+
+/* lastdoor */
+/* choice-container.clickscreen.lastdoor button.drawerBed{
+	left: 16%;
+	top: 60%;
+	width: 12%;
+	height: 18%;
+} */
+choice-container.clickscreen.lastdoor button.door{
+	left: 40%;
 	top: 15%;
-	width:60%;
-	height: 60%;
-}
-choice-container.clickscreen.vtwrongsearch button.mirror{
-	left: 0;
-	top: 0;
-	width:43%;
-	height: 13%;
-}
-choice-container.clickscreen.vtwrongsearch button.machine{
-	left: 77.5%;
-	top: 1%;
-	width:21%;
-	height: 90%;
+	width: 22%;
+	height: 68%;
 }
 
 /* map */
@@ -250,9 +226,9 @@ img[data-image="backpack"] {
   background-position: center;
 	color: transparent;
 	position: absolute;
-	top: 28%;
+	top: 38%;
 	left: 85%;
-	height: 62%;
+	height: 30%;
 	width: 15%;
 	margin: 0px;
 	overflow: hidden;
@@ -275,9 +251,9 @@ img[data-image="backpack"] {
 	background-position: center;
 	color: transparent;
 	position: absolute;
-	top: 28%;
+	top: 38%;
 	left: 0%;
-	height: 62%;
+	height: 30%;
 	width: 15%;
 	margin: 0px;
 	overflow: hidden;
@@ -316,5 +292,9 @@ img[data-image="backpack"] {
 } */
 
 .redText {
-	color: tomato;
+	color: #ffe71e;
+}
+
+.ending {
+	font-size: larger;
 }
